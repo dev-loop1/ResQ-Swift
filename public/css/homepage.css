@@ -1,0 +1,288 @@
+/* logo image */
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+/* keyframes for the logo animation */
+@keyframes logoAnimation {
+  0% {
+    transform: translate(0, 0); /* Start at the original position */
+  }
+  25% {
+    transform: translate(1000px, 0); /* Translate to the right */
+  }
+  50% {
+    transform: translate(0, 0); /* Return to the original position */
+  }
+  100% {
+    transform: translate(0, 0); /* Stay at the original position */
+  }
+}
+
+/* animation to the logo */
+.logo-img {
+  width: 100px;
+  height: auto;
+  animation: logoAnimation 1s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+/* Color of ResQ Swift at the top */
+.header-content h1 a {
+  color: #0aa6da;
+  text-decoration: none;
+}
+
+/* Style for the header text ResQ Swift */
+header h1 {
+  text-align: left;
+  font-size: 50px;
+  color: #0aa6da;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Style for the login options */
+.login {
+  text-decoration: none;
+  color: white;
+  background-color: #ff69b4; 
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s; /*transition for hover effect */
+}
+
+.login-options {
+  display: flex;
+}
+
+.login-options a + a {
+  margin-left: 10px; /* the space between login and register*/
+}
+
+.login:hover {
+  background-color: #87ceeb;
+}
+/* The top nav part is complete */
+
+/* --------------------------------------------------- */
+
+/* Main section styles */
+.main-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Left content styles */
+.left-content {
+  width: 50%;
+  height: auto;
+  font-weight: normal;
+  text-decoration: none;
+  margin-right: 10px;
+  aspect-ratio: 800/600; /* the aspect ratio of image (width/height) */
+}
+
+.left-content-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center horizontally */
+  justify-content: center; /* Center vertically */
+  text-align: center; /* Center text within the container */
+  height: 100%; /* Cover the maximum height */
+}
+
+/* Enlarged "?" styles */
+.questionmark {
+  font-size: 150%; /* Enlarge size */
+  color: #ff0000; 
+  animation: rotate 3s 1s linear infinite; /* 1s is the delay */
+}
+
+.combined-heading {
+  display: flex;
+  align-items: center;
+}
+
+/* Rotate animation */
+@keyframes rotate {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+
+.small-text {
+  font-size: 20px;
+  color: #000000; /* Small text color */
+  margin-top: 10px; /* The space between h2 and p */
+  margin-bottom: 30px;
+}
+
+/* Book Now button styles */
+.book-now-button {
+  display: inline-block;
+  padding: 48px 48px;
+  font-size: 200%;
+  background-color: #ff0000;
+  border-radius: 50%;
+  color: white;
+  font-weight: bold;
+  transition: font-weight 0.3s, background-color 0.3s;
+  text-decoration: none;
+  margin-top: 10px; /* The space between p and button */
+}
+
+.book-now-button:hover {
+  font-weight: bold;
+  background-color: #a20e0e;
+}
+
+/* Right content styles*/
+.right-content {
+  width: 50%;
+}
+
+.right-content img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+
+/* The first section is complete */
+
+/* --------------------------------------------------- */
+
+/* First Aid section styles */
+.first-aid-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: #000; 
+  color: white;
+  padding: 400px;
+  overflow: hidden; 
+}
+
+/* Background image */
+.first-aid-section::before {
+  content: "";
+  background-image: url('First-Aid-Tips.jpeg');
+  background-size: cover;
+  background-position: center;
+  opacity: .7;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* First Aid content styles */
+.first-aid-content {
+  max-width: 600px; 
+  text-align: center;
+}
+/* for both In Emergency and FIRST AID TIPS */
+h2 {
+  font-size: 5em;
+  font-weight: bold;
+}
+
+p {
+  font-size: 2em;
+}
+
+/* First Aid link styles */
+.first-aid-link {
+  display: block;
+  background-color: rgb(255, 12, 12);
+  color: white;
+  font-weight: bold;
+  font-size: 300%;
+  text-align: center;
+  padding: 10px 20px;
+  margin: 0 auto; /* Center the link horizontally */
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.first-aid-link:hover {
+  font-weight: bold; 
+  font-size: 400%;
+}
+
+
+/* The first aid section is complete */
+
+/* --------------------------------------------------- */
+
+/* About Us Section */
+
+/* About Us box styles */
+.about-us-box {
+  background-color: #44dedb;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.about-us-box h2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.about-us-box h4 {
+  color: black;
+  text-align: left;
+}
+
+/* The About Us section is complete */
+
+/* --------------------------------------------------- */
+
+/* FOOTER */
+
+/* Footer styles */
+footer {
+  padding: 10px 0;
+}
+
+.footer-center {
+  text-align: center;
+}
+
+/* Footer links styles */
+.footer-center a {
+  display: inline-block;
+  margin: 0 10px;
+  background-color: black;
+  color: white;
+  padding: 5px 10px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.footer-center a:hover {
+  background-color: #008000; /* Green background on hover */
+  color: white;
+}
+
+/* The footer part is complete */
+
+/* ---------------------------------------------------
+  HOMEPAGE ENDS
+  --------------------------------------------------- */

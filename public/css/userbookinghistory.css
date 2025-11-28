@@ -1,0 +1,131 @@
+/* logo image */
+.logo-img {
+  width: 100px;
+  height: auto;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+/* Color of ResQ Swift link(homepage) at the top */
+.header-content h1 a {
+  color: #0aa6da;
+  text-decoration: none;
+}
+
+/* Style for the header text ResQ Swift */
+header h1 {
+  text-align: left;
+  font-size: 50px;
+  color: #0aa6da;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bookinghistory {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 100px;
+  size: 200%;
+  text-align: center;
+}
+
+/* Profile icon */
+.profile-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-right: 50px;
+  
+}
+
+.profile-img {
+  width: 40px;
+  height: 40px;
+  margin-left: 10px;
+  margin-right: 50px;
+}
+
+/* Profile information box */
+.profile-info-box {
+  display: none;
+  position: absolute;
+  top: 50px; /* Adjust the top position as needed */
+  right: 0;
+  background-color: #ffffff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 1;
+}
+
+p.mail{
+  font-size: 100%;
+}
+
+/* Style for the user information in the box */
+.user-info {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Style for the "Booking History" link */
+.profile-info-box a {
+  color: #0aa6da;
+  text-decoration: none;
+}
+
+
+
+.booking-details {
+background-color: #ffdfdf; 
+margin: 20px; 
+display: flex;
+justify-content: left;
+border-style: solid;
+border-radius: 10px;
+border-width: 3px;
+}
+
+
+.patient-details {
+padding: 20px; 
+text-align: left;
+}
+
+
+
+/* Footer styles */
+footer {
+  padding: 10px 0;
+  margin-top: 1000px;
+  background-color: black;
+}
+
+.footer-center {
+  text-align: center;
+}
+
+/* Footer links styles */
+.footer-center a {
+  display: inline-block;
+  margin: 0 10px;
+  background-color: black;
+  color: white;
+  padding: 5px 10px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.footer-center a:hover {
+  background-color: #008000; /* Green background on hover */
+  color: white;
+}

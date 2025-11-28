@@ -1,0 +1,896 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ResQ Swift | Hospital Page</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <style>
+        *{
+            margin: 0;
+        }
+
+        input{
+            display: none;
+        }
+.logo-img {
+  width: 100px;
+  height: auto;
+
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+body {
+  margin: 0;
+}
+
+header h1 {
+  text-align: left;
+  font-size: 50px;
+  color: #2d4a90;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bookinghistory {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 100px;
+  size: 200%;
+  text-align: center;
+}
+
+.profile-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-right: 50px;
+  margin-bottom: 10px;
+  left: 350px;
+}
+
+.profile-img {
+  width: 70px;
+  height: auto;
+}
+
+.profile-info-box {
+  display: none;
+  position: absolute;
+  top: 50px; 
+  right: 0px;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.892);
+  padding: 15px 25px;
+  border-radius: 5px;
+  z-index: 1;
+  margin-top: 45px;
+  margin-bottom: 10x;
+}
+
+p.mail {
+  font-size: 100%;
+}
+
+.user-info {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.profile-info-box a {
+  color: #2d4a90;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 90%;
+}
+
+.container {
+  align-content: center;
+  text-align: center;
+  margin-top: 20px;
+  margin-right: 5%;
+}
+
+.display-date {
+  text-align: center;
+  margin-bottom: 0px;
+  font-size: 1 rem;
+  font-weight: 100;
+}
+
+.display-time {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+
+nav {
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  background-color: #ffff;
+  background-attachment: fixed;
+  margin-top: 0px;
+  height: 120px;
+}
+main {
+  padding-top: 30px;
+  margin-top: 145px;
+}
+
+.booking-details {
+  background-color: #20cdc1;
+  margin: 20px;
+  display: flex;
+  justify-content: space-between;
+  border-style: solid;
+  border-radius: 10px;
+  border-width: 3px;
+  border-color: #000000;
+  position: relative;
+  padding: 10px;
+  color: #2d4a90;
+  font-weight: bold;
+}
+
+.confirmation {
+  position: absolute;
+  top: 10px; 
+  right: 10px;
+}
+
+.confirmation {
+  display: flex;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  box-sizing: border-box;
+}
+
+.confirmation .accept-button {
+  box-sizing: border-box;
+  background-color: green;
+  color: white;
+  margin-right: 15px;
+  padding: 10px 20px;
+  border-radius: 5px;
+
+}
+
+.confirmation .decline-button {
+  box-sizing: border-box;
+  
+  background-color: red;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+
+}
+
+.confirmation .decline-button:hover {
+  background-color: #e30000;
+  opacity: 2.2;
+}
+
+.confirmation .accept-button:hover {
+  background-color: #137100;
+  opacity: 2.2;
+}
+
+#statusText {
+  font-size: 150%; 
+  color: #ff0000;
+}
+
+.mark_complete {
+  position: absolute;
+  bottom: 10px; 
+  right: 10px;
+}
+
+.mark_complete button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: rgb(253, 42, 0);
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.mark_complete button:hover {
+  background-color: green;
+}
+
+footer {
+  padding: 10px 0;
+  margin-top: 1000px;
+  background-color:  #2d4a90;
+}
+
+.footer-center {
+  text-align: center;
+}
+
+.footer-center a {
+  display: inline-block;
+  margin: 0 10px;
+  background-color: #00A86B;
+  color: white;
+  padding: 5px 10px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.footer-center a:hover {
+  background-color: #e74c3c;
+  color: white;
+}
+    </style>
+  </head>
+  <body>
+    <nav>
+      <header>
+        <div class="top">
+          <div class="header-content">
+            <div class="logo">
+              <img src="/css/Logo.jpg" alt="logofront" class="logo-img" />
+              <h1>ResQ Swift</h1>
+            </div>
+
+            <div class="profile-icon">
+              <img
+                src="/css/hospitalicon.png"
+                alt="profile-icon"
+                class="profile-img"
+              />
+              <div class="profile-info-box">
+                <div class="user-info">
+                  <p class="mail">Email: <%= profilename %> </p>
+                </div>
+                <br />
+                <a href="/hoslogin/hosprofile/hoshistory">Booking History</a> <br> <br />
+                <a href="/logout">Logout</a>
+              </div>
+            </div>
+            <div class="container">
+              <div class="display-date">
+                <span id="day">day</span>,
+                <span id="daynum">00</span>
+                <span id="month">month</span>
+                <span id="year">0000</span>
+              </div>
+              <div class="display-time"></div>
+            </div>
+          </div>
+        </div>
+      </header>
+    </nav>
+    <hr>
+    <main>
+      <% arr.forEach(function(userdata){ %>
+        <div>
+          <div class="booking-details">
+          <p class="patient-details">
+          Patient's Name: <%= userdata.patientname %> <br>
+          Age: <%= userdata.patientage %> <br>
+          Gender: <%= userdata.patientgender %> <br>
+          Contact Number: <%= userdata.patientnumber %> <br>
+          Selected Hospital: <%= userdata.selectedhospital %> <br>
+          Booking Email: <%= userdata.bookingemail %> <br>
+          Booking Date: <%= userdata.bookingdate %> <br>
+          Booking Time: <%= userdata.bookingtime %> <br>
+          Description of the Issue: <%= userdata.patientdescription %> <br>
+    
+        </p>
+        <div class="confirmation">
+          <form action="/hoslogin/hosprofile/accept" method="post">
+            <input type="text" name="delname" value= <%= userdata.patientname %> >
+          <input type="text" name="delnumber" value= <%= userdata.patientnumber %> >
+            <input type="text" name="acceptemail" value= <%= userdata.bookingemail %> >
+            <button class="accept-button">Accept</button>
+          </form>
+          <form action="/hoslogin/hosprofile/decline" method="post">
+            <input type="text" name="delname" value= <%= userdata.patientname %> >
+          <input type="text" name="delnumber" value= <%= userdata.patientnumber %> >
+            <input type="text" name="declineemail" value= <%= userdata.bookingemail %> >
+            <button class="decline-button">Decline</button>
+          </form>
+          </div>
+          <div class="status" id="statusText"></div>
+      </div>
+        </div>
+        <hr>
+    <% }) %>
+
+    </main>
+
+    <footer>
+      <div class="footer-center">
+        <a href="#">Contact Us</a>
+        <a href="#">Terms of Use</a>
+      </div>
+    </footer>
+
+
+
+  </body>
+  <script>
+    window.onload = function () {
+      const profileIcon = document.querySelector(".profile-icon");
+      const profileInfoBox = document.querySelector(".profile-info-box");
+
+      profileIcon.addEventListener("click", () => {
+        profileInfoBox.style.display =
+          profileInfoBox.style.display === "none" ||
+          profileInfoBox.style.display === ""
+            ? "block"
+            : "none";
+      });
+    };
+  </script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+    });
+  </script>
+  <script>
+    const displayTime = document.querySelector(".display-time");
+    function showTime() {
+      let time = new Date();
+      displayTime.innerText = time.toLocaleTimeString("en-US", {
+        hour12: false,
+      });
+      setTimeout(showTime, 1000);
+    }
+
+    showTime();
+
+    function updateDate() {
+      let today = new Date();
+
+      let dayName = today.getDay(),
+        dayNum = today.getDate(),
+        month = today.getMonth(),
+        year = today.getFullYear();
+
+      const months = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
+      ];
+      const dayWeek = [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+      ];
+      const IDCollection = ["day", "daynum", "month", "year"];
+      const val = [dayWeek[dayName], dayNum, months[month], year];
+      for (let i = 0; i < IDCollection.length; i++) {
+        document.getElementById(IDCollection[i]).firstChild.nodeValue = val[i];
+      }
+    }
+
+    updateDate();
+  </script>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ResQ Swift | Hospital Page</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <style>
+      .logo-img {
+  width: 100px;
+  height: auto;
+  margin-left: .5vw;
+
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+
+}
+body {
+  margin: 0;
+}
+
+/* Style for the header text ResQ Swift */
+
+nav {
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  background-color: #2d4a90;
+  background-attachment: fixed;
+  margin-top: 0px;
+  height: 120px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav h1 {
+  text-align: left;
+  font-size: 50px;
+  color: #fff;
+  margin-left: 1vw;
+}
+
+.bookinghistory {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 100px;
+  size: 200%;
+  text-align: center;
+}
+
+/* Profile icon */
+/* .profile-icon {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-right: 50px;
+  margin-bottom: 10px;
+  left: 1200px;
+}
+
+.profile-img {
+  width: 70px;
+  height: auto;
+}
+
+.profile-info-box {
+  display: none;
+  position: absolute;
+  top: 50px; 
+  right: 0px;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.892);
+  padding: 15px 25px;
+  border-radius: 5px;
+  z-index: 1;
+  margin-top: 45px;
+  margin-bottom: 10x;
+}
+
+p.mail {
+  font-size: 100%;
+}
+
+.user-info {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.profile-info-box a {
+  color: #2d4a90;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 90%;
+} */
+.profile-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-right: 50px;
+  margin-bottom: 10px;
+  left: 350px;
+}
+
+.profile-img {
+  width: 70px;
+  height: auto;
+}
+
+.profile-info-box {
+  display: none;
+  position: absolute;
+  top: 50px; 
+  right: 0px;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.892);
+  padding: 15px 25px;
+  border-radius: 5px;
+  z-index: 1;
+  margin-top: 45px;
+  margin-bottom: 10x;
+}
+
+p.mail {
+  font-size: 100%;
+}
+
+.user-info {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.profile-info-box a {
+  color: #2d4a90;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 90%;
+}
+
+.container {
+  align-content: center;
+  text-align: center;
+  margin-top: 20px;
+  color:#fff;
+  margin-right: .5vw;
+}
+
+.display-date {
+  text-align: center;
+  margin-bottom: 0px;
+  font-size: 1.6rem;
+  font-weight: 300;
+}
+
+.display-time {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+
+
+main {
+  padding-top: 30px;
+  margin-top: 35px;
+}
+
+.booking-details {
+  background-color: #20cdc1;
+  margin: 20px;
+  display: flex;
+  justify-content: space-between;
+  border-style: solid;
+  border-radius: 10px;
+  border-width: 3px;
+  border-color: #000000;
+  position: relative;
+  padding: 10px;
+  color: #2d4a90;
+  font-weight: bold;
+}
+
+/* .confirmation {
+  position: absolute;
+  top: 10px; 
+  right: 10px;
+}
+
+.confirmation .accept-button {
+  box-sizing: border-box;
+  background-color: green;
+  color: white;
+  margin-right: 15px;
+  padding: 10px 20px;
+  border-radius: 5px;
+
+}
+
+.confirmation .decline-button {
+  box-sizing: border-box;
+  background-color: red;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.confirmation .decline-button:hover {
+  background-color: #e30000;
+  opacity: 2.2;
+}
+
+.confirmation .accept-button:hover {
+  background-color: #137100;
+  opacity: 2.2;
+} */
+.confirmation {
+  position: absolute;
+  top: 10px; 
+  right: 10px;
+}
+
+.confirmation {
+  display: flex;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  box-sizing: border-box;
+}
+
+.confirmation .accept-button {
+  box-sizing: border-box;
+  background-color: green;
+  color: white;
+  margin-right: 15px;
+  padding: 10px 20px;
+  border-radius: 5px;
+
+}
+
+.confirmation .decline-button {
+  box-sizing: border-box;
+  
+  background-color: red;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+
+}
+
+.confirmation .decline-button:hover {
+  background-color: #e30000;
+  opacity: 2.2;
+}
+
+.confirmation .accept-button:hover {
+  background-color: #137100;
+  opacity: 2.2;
+}
+
+#statusText {
+  font-size: 150%; 
+  color: #ff0000;
+}
+
+.mark_complete {
+  position: absolute;
+  bottom: 10px; 
+  right: 10px;
+}
+
+.mark_complete button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: rgb(253, 42, 0);
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.mark_complete button:hover {
+  background-color: green;
+}
+
+/* Footer styles */
+footer {
+  padding: 10px 0;
+  margin-top: 1000px;
+  background-color:  #2d4a90;
+}
+
+.footer-center {
+  text-align: center;
+}
+
+/* Footer links styles */
+.footer-center a {
+  display: inline-block;
+  margin: 0 10px;
+  background-color: #00A86B;
+  color: white;
+  padding: 5px 10px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.footer-center a:hover {
+  background-color: #e74c3c;
+  color: white;
+}
+input{
+  display: none;
+}
+    </style>
+  </head>
+  <body>
+    <nav>
+            <div class="logo">
+              <img src="/css/Logo.png" alt="logofront" class="logo-img" />
+              <h1>ResQ Swift</h1>
+            </div>
+            <div class="profile-icon">
+              <img
+                src="/css/hospitalicon.png"
+                alt="profile-icon"
+                class="profile-img"/>
+              <div class="profile-info-box">
+                <div class="user-info">
+                  <p class="mail">Email: <%= profilename %></p>
+                </div>
+                <a href="/hoslogin/hosprofile/hoshistory"> Booking History</a>
+              </br>
+              </br>
+                <a href="/logout">Logout</a>
+              </div>
+            </div>
+
+
+            <div class="container">
+              <div class="display-date">
+                <span id="day">day</span>,
+                <span id="daynum">00</span>
+                <span id="month">month</span>
+                <span id="year">0000</span>
+              </div>
+              <div class="display-time"></div>
+            </div>
+    </nav>
+    <br><br><br><br>
+    <main>
+      <% arr.forEach(function(userdata){ %>
+        <div>
+          <div class="booking-details">
+          <p class="patient-details">
+          Patient's Name: <%= userdata.patientname %> <br>
+          Age: <%= userdata.patientage %> <br>
+          Gender: <%= userdata.patientgender %> <br>
+          Contact Number: <%= userdata.patientnumber %> <br>
+          Selected Hospital: <%= userdata.selectedhospital %> <br>
+          Booking Email: <%= userdata.bookingemail %> <br>
+          Booking Date: <%= userdata.bookingdate %> <br>
+          Booking Time: <%= userdata.bookingtime %> <br>
+          Description of the Issue: <%= userdata.patientdescription %> <br>
+          <!-- <form action="/hoslogin/hosprofile" method="post">
+          <input type="text" name="delname" value= <%= userdata.patientname %> >
+          <input type="text" name="delnumber" value= <%= userdata.patientnumber %> >
+          <div class="mark_complete" id="markComplete">
+            <button class="complete-button" type="submit">Mark as completed</button>
+          </div>
+        </form> -->
+        </p>
+        <div class="confirmation">
+          <form action="/hoslogin/hosprofile/accept" method="post">
+            <input type="text" name="delname" value= <%= userdata.patientname %> >
+          <input type="text" name="delnumber" value= <%= userdata.patientnumber %> >
+          <!-- <input type="text" name="selectedhospital" name="<%= profilename %>"> -->
+            <input type="text" name="acceptemail" value= <%= userdata.bookingemail %> >
+            <button class="accept-button">Accept</button>
+          </form>
+          <form action="/hoslogin/hosprofile/decline" method="post">
+            <input type="text" name="delname" value= <%= userdata.patientname %> >
+          <input type="text" name="delnumber" value= <%= userdata.patientnumber %> >
+            <input type="text" name="declineemail" value= <%= userdata.bookingemail %> >
+            <button class="decline-button">Decline</button>
+          </form>
+          </div>
+        <div class="status" id="statusText"></div>
+      </div>
+<hr>
+<% }) %>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+      <div class="footer-center">
+        <a href="#">Contact Us</a>
+        <a href="#">Terms of Use</a>
+      </div>
+    </footer>
+
+    
+  </body>
+  <script>
+    window.onload = function () {
+      const profileIcon = document.querySelector(".profile-icon");
+      const profileInfoBox = document.querySelector(".profile-info-box");
+
+      profileIcon.addEventListener("click", () => {
+        profileInfoBox.style.display =
+          profileInfoBox.style.display === "none" ||
+          profileInfoBox.style.display === ""
+            ? "block"
+            : "none";
+      });
+    };
+  </script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+    });
+  </script>
+  <script>
+    function myFunction() {
+  var x = document.getElementById("myDIV");
+  if (x.style.display === "none") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+  </script>
+  <script>
+    const displayTime = document.querySelector(".display-time");
+    // Time
+    function showTime() {
+      let time = new Date();
+      displayTime.innerText = time.toLocaleTimeString("en-US", {
+        hour12: false,
+      });
+      setTimeout(showTime, 1000);
+    }
+
+    showTime();
+
+    // Date
+    function updateDate() {
+      let today = new Date();
+
+      // return number
+      let dayName = today.getDay(),
+        dayNum = today.getDate(),
+        month = today.getMonth(),
+        year = today.getFullYear();
+
+      const months = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
+      ];
+      const dayWeek = [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+      ];
+      // value -> ID of the html element
+      const IDCollection = ["day", "daynum", "month", "year"];
+      // return value array with number as a index
+      const val = [dayWeek[dayName], dayNum, months[month], year];
+      for (let i = 0; i < IDCollection.length; i++) {
+        document.getElementById(IDCollection[i]).firstChild.nodeValue = val[i];
+      }
+    }
+
+    updateDate();
+  </script>
+</html>

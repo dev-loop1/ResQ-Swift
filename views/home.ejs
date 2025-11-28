@@ -1,0 +1,590 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ResQ Swift | Home</title>
+    <link rel="stylesheet" href="css/homepage.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  </head>
+  <body>
+    <nav>
+      <header>
+        <div class="top" data-aos="fade-down">
+          <div class="header-content">
+            <div class="logo">
+              <img src="css/Logo.jpg" alt="logofront" class="logo-img" />
+              <h1>ResQ Swift</h1>
+            </div>
+            <div class="login-options">
+              <a class="login" href="/register">Register</a>
+              <a class="login" href="/loginselect">Login</a>
+            </div>
+          </div>
+        </div>
+      </header>
+    </nav>
+    <br>
+    <br>
+    <main>
+<section class="main-section">
+  <div class="left-content" data-aos="zoom-in-right">
+    <div class="left-content-inner">
+      <h2 class="combined-heading">In Emergency<span class="questionmark">?</span></h2>
+      <p class="small-text">
+        Click on "Book Now" and get the ambulance at your place at the
+        earliest time possible.
+      </p>
+      <a class="book-now-button" href="/booknow">Book Now</a>
+    </div>
+  </div>
+  <div class="right-content" data-aos="zoom-in-left">
+    <img src="css/ambulgif.gif" alt="Ambulance" />
+  </div>
+</section>
+
+
+      <br />
+      <br />
+
+      <section>
+        <div class="first-aid-section" data-aos="flip-up">
+          <div class="first-aid-content"  data-aos="zoom-in-up">
+            <h2> FIRST AID TIPS</h2>
+            <p>Don't know what to do? Click on First Aid, and we will provide you with the best immediate guidance possible.</p>
+            <a href="/firstaid" class="first-aid-link">Click Here</a>
+          </div>
+        </div>
+      </section>
+      
+      <br />
+      <br />
+
+      <section>
+        <div class="about-us-animation">
+          <div class="about-us-box" data-aos="zoom-in">
+            <h2>About Us</h2>
+            <h4>
+              ResQ Swift aims to solve is the delay in accessing ambulance
+              services during medical emergencies, which can be a matter of life
+              and death. This is an Ambulance Booking Website that enables users
+              to quickly and efficiently book ambulances based on the type of
+              emergency, choose nearby hospitals for immediate transportation,
+              and provide access to essential first aid tips. It addresses the
+              critical issue of timely access to emergency medical assistance.
+            </h4>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <br />
+    <br />
+
+    <footer>
+      <div class="footer-center">
+        <a href="/adminlogin">Admin</a>
+        <a href="#">Contact Us</a>
+        <a href="#">Terms of Use</a>
+        <a href="/hoslogin">Hospital Login</a>
+      </div>
+    </footer>
+
+  </body>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000
+    });
+  </script>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ResQ Swift | Home</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <style>
+      * {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+}
+
+nav {
+  position: fixed;
+  width: 100%;
+  z-index: 100; /* Make sure it's above other content */
+  background-color: #0674cc;
+  background-attachment: fixed;
+  margin-top: 0px;
+  height: 120px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* logo image */
+.logo {
+  display: flex;
+  align-items: center;
+  width: 72%;
+}
+
+/* keyframes for the logo animation */
+@keyframes logoAnimation {
+  0% {
+    transform: translate(0, 0); /* Start at the original position */
+  }
+  25% {
+    transform: translate(1000px, 0); /* Translate to the right */
+  }
+  50% {
+    transform: translate(0, 0); /* Return to the original position */
+  }
+  100% {
+    transform: translate(0, 0); /* Stay at the original position */
+  }
+}
+
+/* animation to the logo */
+.logo-img {
+  margin-left: 0.5vw;
+  width: 100px;
+  height: auto;
+  animation: logoAnimation 1.5s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+/* Style for the header text ResQ Swift */
+nav h1 {
+  text-align: left;
+  font-size: 50px;
+  color: white;
+  margin-left: 1vw;
+}
+
+.login-options {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 3vw;
+}
+
+.first_aid {
+  display: flex;
+  flex-direction: column;
+  background-color: #e74c3c;
+  color: white;
+  padding: 5px 10px;
+  margin-right: 10px;
+  text-decoration: none;
+  border: 1px solid #e74c3c;
+  border-radius: 15px;
+  transition: background-color 0.3s;
+  text-decoration: none;
+}
+a.hi {
+  color: white;
+  text-decoration: none;
+  font-size: x-large;
+  border-radius: 20px;
+}
+
+a.login {
+  background-color: #00ab8d;
+  color: white;
+  padding: 5px 10px;
+  margin-right: 10px;
+  text-decoration: none;
+  border: 1px solid #00ab8d;
+  border-radius: 20px;
+  transition: background-color 0.3s;
+  font-size: x-large;
+}
+
+a.first_aid:hover {
+  background-color: #00ab8d;
+}
+
+a.login:hover {
+  /* background-color: #0674cc ; */
+  background-color: #e74c3c;
+
+  border: none;
+  transform: scale(1.04);
+}
+
+main {
+  padding-top: 30px;
+  margin-top: 0%; /* Adjust this value to match the height of your navbar */
+}
+
+/* The top nav part is complete */
+
+/* --------------------------------------------------- */
+
+/* Main section styles */
+.main-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0px;
+  margin-bottom: 0%;
+  background-color: #00ab8d;
+}
+
+/* Left content styles */
+.left-content {
+  width: 50%;
+  height: auto;
+  font-weight: normal;
+  text-decoration: none;
+  margin-right: 10px;
+  aspect-ratio: 400/380; /* the aspect ratio of image (width/height) */
+}
+
+.left-content-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center horizontally */
+  justify-content: center; /* Center vertically */
+  text-align: center; /* Center text within the container */
+  height: 100%; /* Cover the maximum height */
+  color: #000;
+}
+
+/* Enlarged "?" styles */
+.questionmark {
+  font-size: 150%; /* Enlarge size */
+  color: #ff0000;
+  animation: rotate 3s 1s linear infinite; /* 1s is the delay */
+}
+
+.combined-heading {
+  display: flex;
+  align-items: center;
+}
+
+/* Rotate animation */
+@keyframes rotate {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+.small-text {
+  font-size: 20px;
+  color: #000000; /* Small text color */
+  margin-top: 0px; /* The space between h2 and p */
+  margin-bottom: 30px;
+}
+
+/* Book Now button styles */
+.book-now-button {
+  display: flex;
+  font-size: 150%;
+  padding: 25px 25px;
+  background-color: #ff0000;
+  border-radius: 25px;
+  color: white;
+  font-weight: bold;
+  transition: font-weight 0.3s, background-color 0.3s;
+  text-decoration: none;
+  margin-top: 10px; /* The space between p and button */
+}
+
+.book-now-button:hover {
+  font-weight: bold;
+  background-color: #a20e0e;
+}
+
+/* Right content styles*/
+.right-content {
+  width: 50%;
+  display: flex;
+  align-items: right;
+  justify-content: right;
+  margin-right: 0%;
+}
+
+.right-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 50px 0 0 50px;
+  width: 95%;
+}
+
+/* The first section is complete */
+
+/* --------------------------------------------------- */
+
+/* First Aid section styles */
+.first-aid-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: #000;
+  color: #000;
+  font-weight: bolder;
+  padding: 200px;
+  overflow: hidden;
+  margin-bottom: 0%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Background image */
+/* .first-aid-section::before {
+  content: "";
+  color:#fff;
+  background-image: url(firstaidphoto.png);
+  background-size: cover;
+  background-position: center;
+  opacity: 0.7;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-repeat: none;
+} */
+
+/* First Aid content styles */
+.first-aid-content {
+  max-width: 600px;
+  text-align: center;
+}
+/* for both In Emergency and FIRST AID TIPS */
+h2 {
+  font-size: 5em;
+  font-weight: bold;
+  margin-top: 3vh;
+}
+
+p {
+  font-size: 2em;
+}
+
+/* First Aid link styles */
+.first-aid-link {
+  display: block;
+  background-color: #00a86b;
+  color: white;
+  font-weight: bold;
+  font-size: 300%;
+  text-align: center;
+  align-items: center;
+  padding: 10px 10px;
+  margin: 0 auto; /* Center the link horizontally */
+  text-decoration: none;
+  border-radius: 25px;
+}
+
+.first-aid-link:hover {
+  font-weight: bold;
+  background-color: #2d4a90;
+}
+
+/* The first aid section is complete */
+
+/* --------------------------------------------------- */
+
+/* About Us Section */
+
+/* About Us box styles 
+.about-us-box {
+  background-color: #44dedb;
+  padding: 20px 30px;
+  text-align: center;
+}
+
+.about-us-box h2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.about-us-box h4 {
+  color: black;
+  text-align: left;
+  padding: 20px 30px;
+}
+
+/* The About Us section is complete */
+
+/* --------------------------------------------------- */
+
+/* FOOTER */
+
+/* Footer styles */
+footer {
+  margin-top: 0%;
+  padding: 10px 0;
+  background-color: #0674cc;
+  /* background-image: url("f.png"); */
+  text-align: justify;
+  align-items: center;
+}
+
+.footer-center {
+  text-align: center;
+}
+.about-us-box h2 {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: underline;
+  color: white;
+}
+
+.about-us-box h4 {
+  color: white;
+  text-align: justify;
+  font-size: 150%;
+  font-weight: lighter;
+}
+
+.about-us-box h4 {
+  size: 50%;
+  width: 80%;
+  text-align: center;
+  margin-left: 10%;
+  margin-right: 10%;
+  justify-content: center;
+}
+
+/* Footer links styles */
+.footer-center a {
+  display: inline-block;
+  margin: 0 10px;
+  background-color: #000000;
+  color: white;
+  padding: 5px 10px;
+  text-decoration: none;
+  border-radius: 5px;
+  border-style: solid;
+  border-color: white;
+}
+
+.footer-center a:hover {
+  background-color: #e74c3c;
+  color: white;
+}
+
+/* The footer part is complete */
+
+/* ---------------------------------------------------
+  HOMEPAGE ENDS
+  --------------------------------------------------- */
+    </style>
+  </head>
+  <body>
+    <!--The nav part begins -->
+    <nav data-aos="fade-down">
+      <div class="logo">
+        <img src="/css/Logo.png" alt="logofront" class="logo-img" />
+        <h1>ResQ Swift</h1>
+      </div>
+      <div class="first_aid">
+        <a class="hi" href="#firstaid">First Aid Tips</a>
+      </div>
+      <div class="login-options">
+        <a class="login" href="/register">Register</a>
+        <a class="login" href="/loginselect">Login</a>
+      </div>
+    </nav>
+    <br />
+    <br />
+    <!-- The nav part is complete -->
+    <!-- Main page content -->
+    <main>
+      <!-- First Section -->=
+      <section class="main-section">
+        <div class="left-content" data-aos="zoom-in-right">
+          <div class="left-content-inner">
+            <h2 class="combined-heading">
+              In Emergency<span class="questionmark">?</span>
+            </h2>
+            <p class="small-text">
+              Click on "Book Now" and get the ambulance at your place at the
+              earliest time possible.
+            </p>
+            <a class="book-now-button" href="/booknow">Book Now</a>
+          </div>
+        </div>
+        <div class="right-content" data-aos="zoom-in-left">
+          <img src="/css/ambulgif.gif" alt="Ambulance" />
+        </div>
+      </section>
+
+      <!-- First Section Complete -->
+
+      <!-- First Aid Section -->
+      <section>
+        <div
+          class="first-aid-section"
+          style="background-image: url(/css/firstaidphoto.png)"
+        >
+          <div class="first-aid-content" id="firstaid">
+            <h2>FIRST AID TIPS</h2>
+            <p>
+              Don't know what to do? Click on First Aid, and we will provide you
+              with the best immediate guidance possible.
+            </p>
+            <a href="/firstaid" class="first-aid-link">Click Here</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- First Aid Section Complete -->
+    </main>
+
+    <!-- Main Section Complete -->
+
+    <!-- Footer Section -->
+    <footer>
+      <!-- About Us Section -->
+      <section>
+        <div class="about-us-animation">
+          <div class="about-us-box">
+            <h2>About Us</h2>
+            <h4>
+              ResQ Swift aims to solve is the delay in accessing ambulance
+              services during medical emergencies, which can be a matter of life
+              and death. This is an Ambulance Booking Website that enables users
+              to quickly and efficiently book ambulances based on the type of
+              emergency, choose nearby hospitals for immediate transportation,
+              and provide access to essential first aid tips. It addresses the
+              critical issue of timely access to emergency medical assistance.
+            </h4>
+          </div>
+        </div>
+      </section>
+      <!-- About Us Section Complete -->
+      <div class="footer-center">
+        <a href="/adminlogin">Admin</a>
+        <a href="#">Contact Us</a>
+        <a href="#">Terms of Use</a>
+        <a href="/hoslogin">Hospital Login</a>
+      </div>
+    </footer>
+
+    <!-- Footer Section Complete -->
+  </body>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+    });
+  </script>
+</html>

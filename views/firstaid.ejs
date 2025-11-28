@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>First Aid Tips</title>
+  <!-- Add Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="icon" href="ambulance.png">
+  <style>
+    body{
+      background-color: #2D4A90;
+    }
+    h1{
+      color: white;
+     
+    }
+    .model-content{
+      display:block;
+    }
+
+    img{
+      max-width: 100%;
+      height: auto;
+      
+    }
+    p{
+      color: #2D4A90;
+
+    }
+    h5{
+      background-color: #2D4A90;
+      color: #fff;
+    }
+    .modal-header{
+      background-color: #2D4A90;
+
+    }
+    
+    .modal-content{
+      border-radius: 10px;
+
+    }
+    input{
+      border-radius: 60px;
+    }
+    .icon{
+      position: absolute;
+      width: 2%;
+      /* height: 2%; */
+      right: 13vw;
+      top: 10vh;
+    }
+    
+  </style>
+</head>
+<body >
+  
+  <div class="container mt-4">
+    <center><h1 >ResQ Swift</h1></center>
+    <!-- Search bar -->
+    <input type="text" id="searchInput" class="form-control" placeholder="Search for a first aid case...">
+    <img class="icon" src="search.png" alt="">
+    <br>
+
+    <!-- List of first aid cases -->
+    <ul id="firstAidList" class="list-group"></ul>
+  </div>
+
+  <!-- Bootstrap Modal for displaying first aid tips with an image -->
+  <div class="modal fade" id="firstAidModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">First Aid Tips</h5>
+        </div>
+        <div class="modal-body">
+          <p id="firstAidTips"></p>
+          <img id="firstAidImage" src="" alt="First Aid Image">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add Bootstrap and jQuery scripts -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    const firstAidData = [
+      { name: "Cuts and Bleeding", tips: "Clean the wound with soap and water. Apply direct pressure to stop bleeding.", image: "cutsandbleeding.jpg" },
+      { name: "Burns", tips: "Cool the burn with cold water and cover with a sterile dressing.", image: "https://www.firstaid.co.uk/images/blog/2022/Infographic/Burns-infographic.jpg" },
+      { name: "Choking", tips: "Perform the Heimlich maneuver by giving abdominal thrusts. Encourage coughing if possible.", image: "chocking.jpeg" },
+      { name: "Heart Attack/ Cardiac Arrest", tips: "Help the person sit down, chew an aspirin if available, and call emergency services.", image: "https://media0.giphy.com/media/d07PtnTq0oVsk/giphy.gif" },
+      { name: "Fractures", tips: "Immobilize the injured area with a splint. Keep the person still and seek medical help.", image: "https://vmedo.com/blog/wp-content/uploads/2018/03/FirstAidForFracture-3.png" },
+      { name: "Heat Exhaustion", tips: "Move to a cooler place, drink water, and rest.", image: "https://onlinefirstaid.com/wp-content/uploads/2020/04/Heat-Exhaustion-IG-.jpg" },
+      { name: "Fits/Seizures", tips: "Ensure the person's safety by moving any dangerous objects away. Do not restrain the person. Place them on their side to keep the airway clear. Call for an ambulance if it's the person's first seizure or if it lasts longer than 5 minutes.", image: "https://jamaicahospital.org/newsletter/wp-content/uploads/2017/03/seizures.jpg" },
+      { name: "Food Poisoning", tips: "If you suspect food poisoning, stay hydrated, rest, and seek medical attention if symptoms worsen or persist.", image: "https://social.zydushospitals.com/data/fb_images/ZydusHospitals/1589555447980169.jpg" },
+      { name: "Allergic Reactions", tips: "Administer an EpiPen if available (as prescribed by a doctor). Call for an ambulance. Assist with CPR if necessary.", image: "https://www.australiawidefirstaid.com.au/media-library/first-aid-for-anaphylaxis-1000w.jpg" },
+      { name: "Snake Bites", tips: "Keep the victim still and at or below heart level. Remove tight clothing and jewelry near the bite.", image: "https://www.shutterstock.com/image-vector/snake-bite-first-aid-care-600w-2149088657.jpg" },
+      { name: "Heart Stroke", tips: "Recognize the signs of stroke (FAST). Keep the person calm and call for an ambulance and perform CPR.", image: "https://media0.giphy.com/media/d07PtnTq0oVsk/giphy.gif" },
+      { name: "Traumatic Injuries (e.g., Road Accidents, Falls)", tips: "While waiting, control bleeding with direct pressure, keep the person still, and do not move them unless necessary. Do not remove any sharp objects.", image: "https://www.firstaidforfree.com/wp-content/uploads/2015/04/First-aid-for-head-injuries.jpg" },
+      { name: "Respiratory Distress", tips: "Help the person sit upright. If they have a known inhaler for conditions like asthma, assist them in using it. If their condition worsens, call for an ambulance.", image: "https://mewat.haryanapolice.gov.in/template/images/first%20aid.jpg" },
+      { name: "Snake Bite", tips: "If someone is bitten by a snake, keep them calm and immobile as possible, immobilize the bitten limb, and seek immediate medical attention", image: "https://www.shutterstock.com/image-vector/snake-bite-first-aid-care-600w-2149088657.jpg" },
+      { name: "Dog Bite", tips: "If bitten by a dog, clean the wound with soap and water, apply an antiseptic, and seek medical attention to assess the risk of infection and the need for additional treatment.", image: "https://pbs.twimg.com/media/ERirz5rU0AEZHSA.jpg" },
+      { name: "Diabatic Emergencies", tips: "If the person is conscious and having low blood sugar (hypoglycemia), provide them with a sugary drink or candy. For high blood sugar (hyperglycemia), provide water and call for an ambulance if necessary.", image:"https://er24.info/wp-content/uploads/2022/11/Diabetic-emerergency-Infographic-vffx.jpg" },
+    ];
+
+    const searchInput = document.getElementById('searchInput');
+    const firstAidList = document.getElementById('firstAidList');
+    const firstAidTips = document.getElementById('firstAidTips');
+
+    // Populate the list of first aid cases
+    firstAidData.forEach(item => {
+      const listItem = document.createElement('li');
+      listItem.textContent = item.name;
+      listItem.className = 'list-group-item';
+      listItem.style.cursor = 'pointer';
+      listItem.addEventListener('click', () => {
+        firstAidTips.textContent = item.tips;
+        document.getElementById('firstAidImage').src = item.image; // Set the image source
+        $('#firstAidModal').modal('show');
+      });
+      firstAidList.appendChild(listItem);
+    });
+
+    // Search functionality
+    searchInput.addEventListener('input', () => {
+      const searchValue = searchInput.value.toLowerCase();
+      firstAidList.innerHTML = '';
+
+      firstAidData.forEach(item => {
+        if (item.name.toLowerCase().includes(searchValue)) {
+          const listItem = document.createElement('li');
+          listItem.textContent = item.name;
+          listItem.className = 'list-group-item';
+
+          
+          listItem.style.cursor = 'pointer';
+          listItem.addEventListener('click', () => {
+            firstAidTips.textContent = item.tips;
+            document.getElementById('firstAidImage').src = item.image; // Set the image source
+            $('#firstAidModal').modal('show');
+          });
+          firstAidList.appendChild(listItem);
+        }
+      });
+    });
+  </script>
+</body>
+</html>

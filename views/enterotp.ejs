@@ -1,0 +1,230 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <title> OTP Verification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #fff;
+            background-color: #dbdbdb;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            
+        }
+
+        .container {
+            background-color: rgb(191, 228, 235);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            padding: 25px;
+            padding-bottom: 20px;
+            max-width: 400px;
+            
+        }
+
+        label {
+            font-size: 28px;
+            margin-right: 30px;
+            font-weight: bold;
+            color: rgb(55, 55, 55);
+        }
+
+        input[type="tel"] { 
+            padding: 10px;
+            margin: 15px ;
+            border:solid  rgb(255, 255, 255);
+            
+            border-radius: 5px;
+            font-size: 16px;
+            background: rgba(255, 255, 255);
+            transition:  0.5s;
+        }
+
+        input[type="tel"]::placeholder {
+            color:rgb(57, 57, 57);
+        }
+
+        input[type="tel"]:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 0.3);
+        }
+        input:hover{
+            transform: scale(1.04);
+            border:solid  rgb(77, 110, 157);
+            border-radius: 10px;    
+        }
+        button {
+            background: #e74c3c;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 12px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background:  #00A86B;
+            transform: scale(1.04);
+            font-weight: normal;
+
+        }
+        
+       form{
+        height: 100px;
+       }
+    </style>
+</head>
+<body>
+    <div class="container" data-aos="flip-up">
+        <form action="/register/sendotp/enterotp" method="post">
+            <label  >Step - 2 / 3</label>
+            <input type="tel" placeholder="Enter OTP" name="userotp">
+            <button type="submit">Verify OTP</button>
+        </form>
+    </div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration:700
+        });
+      </script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <title> OTP Verification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #fff;
+            background-image: url(/css/Slide\ 16_9\ -\ 1.png);
+            /* background-image: url(doodle.png); */
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            
+        }
+
+        .container {
+            width: 50%;
+            background-color: #2D4A90;
+            
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            padding: 25px;
+            padding-bottom: 20px;
+            max-width: 400px;
+            
+        }
+
+        label {
+            font-size: 28px;
+            margin-right: 30px;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        input[type="tel"] { 
+            padding: 10px;
+            margin: 15px ;
+            border:solid  rgb(255, 255, 255);
+            
+            border-radius: 5px;
+            font-size: 16px;
+            background: rgba(255, 255, 255);
+            transition:  0.5s;
+        }
+
+        input[type="tel"]::placeholder {
+            color:rgb(57, 57, 57);
+        }
+
+        input[type="tel"]:focus {
+            outline: none;
+            /* background: rgba(255, 255, 255, 0.3); */
+        }
+        input:hover{
+            transform: scale(1.04);
+            border:solid  rgb(77, 110, 157);
+            border-radius: 10px;    
+        }
+        button {
+            background:  #00A86B;
+
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            padding: 12px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background: #e74c3c;
+
+            transform: scale(1.04);
+            font-weight: normal;
+
+        }
+        
+       form{
+        height: 100px;
+       }
+       .right{
+        text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        height: 100vh;
+        width: 50%;
+       }
+       h1{
+            position: absolute;
+            top: 0;
+            font-size:7vh ;
+            color: black;
+        }
+        .i1{
+            height: 73%;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1 data-aos="fade-right">ResQ Swift</h1>
+    <div class="container" data-aos="fade-right">
+        <form action="/register/sendotp/enterotp" method="post">
+            <label  >Step - 2 / 3</label>
+            <input type="tel" placeholder="Enter OTP" id="enterotp" name="userotp">
+            <button type="submit" onclick="checking()">Verify OTP</button>
+        </form>
+    </div>
+    <div class="right">
+        <img  class="i1"  src="/css/ambulance.gif" alt="">
+
+    </div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration:1000
+        });
+      </script>
+</body>
+</html>

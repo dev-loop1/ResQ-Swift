@@ -1,0 +1,438 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+    <title>Login</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #dbdbdb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            font-family: 'Jost', sans-serif;
+            text-align: center;
+        }
+
+        .main {
+            
+            width: 90%;
+            max-width: 300px;
+            background-color: rgb(191, 228, 235);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            position: relative;
+            margin: 0 auto;
+            padding-top: 20px;
+            min-height: 80px;
+            
+            color: #bf1922;
+            height: auto;
+            transition: 0.8s ease-in-out;
+        }
+
+        .hi3 {
+            margin-top: 6%;
+            
+        }
+
+        a {
+            color: #ffffff;
+            transition: transform 0.5s ease;
+            border-radius: 5px;
+            font-size: large;
+            margin-left: 50%;
+        }
+
+        a:link,
+        a:visited {
+            text-decoration: none;
+        }
+
+        a:hover {
+            transform: scale(1.1);
+            color: rgb(12, 12, 12);
+        }
+
+        
+
+        label {
+            display: block;
+            color: rgb(55, 55, 55);
+            font-size: 2.3em;
+            margin-bottom: 10%;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.5s ease-in-out;
+            
+        }
+
+        input {
+            width: 70%;
+            max-width: 100%;
+            height: auto;
+            background: rgba(255, 255, 255);
+            margin: 2vh auto;
+            padding: 10px;
+            border: solid rgb(255, 255, 255);
+            outline: none;
+            border-radius: 5px;
+            transition: 0.5s;
+            color: #000000;
+        }
+
+        button {
+            height: 40px;
+            margin: 0 auto;
+            display: block;
+            margin-top: 10px;
+            margin-bottom: 3vh;
+            background: #e74c3c;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 12px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+            font-weight: bold;
+        }
+
+        main:hover {
+            transform: scale(1.1);
+        }
+
+        button:hover {
+            background: #00A86B;
+            transform: scale(1.04);
+            font-weight: normal;
+        }
+
+        input:hover {
+            transform: scale(1.04);
+            border: solid rgb(77, 110, 157);
+            border-radius: 10px;
+        }
+
+        ::placeholder {
+            color: rgb(57, 57, 57);
+        }
+
+        @media (max-width: 768px) {
+            .main {
+                width: 90%;
+            }
+            label {
+                font-size: 1.8em;
+                margin-bottom: 3vh;
+            }
+            input {
+                margin: 2vh auto;
+            }
+            button {
+                margin-bottom: 2vh;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main" data-aos="zoom-out">
+        
+            <form action="/hoslogin" method="post">
+                <label>Hospital Login</label>
+                <input type="email" name="hosname" placeholder="Email" required="">
+                <input type="password" name="password" placeholder="Password" required="">
+                <button type="submit">Login</button>
+            </form>
+    </div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 700
+        });
+    </script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+    <title>Login</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            font-family: 'Jost', sans-serif;
+            text-align: center;
+        }
+
+        .main {
+            
+            width: 70%;
+            max-width: 300px;
+            background-color: #2D4A90;
+            border-radius: 30px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            position: relative;
+            margin: 0 auto;
+            padding-top: 20px;
+            min-height: 80px;
+            
+            color: #bf1922;
+            height: auto;
+            transition: 0.8s ease-in-out;
+        }
+
+        .hi3 {
+            
+            margin-top: 6%;
+            
+        }
+
+        a {
+            color: #ffffff;
+            transition: transform 0.5s ease;
+            border-radius: 5px;
+            font-size: large;
+            margin-left: 50%;
+        }
+
+        a:link,
+        a:visited {
+            text-decoration: none;
+        }
+
+        a:hover {
+            transform: scale(1.1);
+            color: #00A86B;
+        }
+
+        
+
+        label {
+            display: block;
+            color: #fff;
+            font-size: 2.3em;
+            margin: 10% auto;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.5s ease-in-out;
+            
+        }
+
+        input {
+            width: 70%;
+            max-width: 100%;
+            height: auto;
+            background: rgba(255, 255, 255);
+            margin: 2vh auto;
+            padding: 10px;
+            border: solid rgb(255, 255, 255);
+            outline: none;
+            border-radius: 5px;
+            transition: 0.5s;
+            color: #000000;
+        }
+
+        button {
+            height: 40px;
+            margin: 0 auto;
+            display: block;
+            margin-top: 10px;
+            margin-bottom: 3vh;
+            
+            background: #00A86B;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 12px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+            font-weight: bold;
+        }
+
+        main:hover {
+            transform: scale(1.1);
+        }
+
+        button:hover {
+            
+            background: #e74c3c;
+
+            transform: scale(1.04);
+            font-weight: normal;
+        }
+
+        input:hover {
+            transform: scale(1.04);
+            border: solid #fff;
+            border-radius: 10px;
+        }
+
+        input[type='password']:hover {
+            transform: scale(1);
+            border: solid #fff;
+            border-radius: 10px;
+        }
+
+
+        ::placeholder {
+            color: rgb(57, 57, 57);
+        }
+
+        @media (max-width: 768px) {
+            .main {
+                width: 90%;
+            }
+            label {
+                font-size: 1.8em;
+                margin-bottom: 3vh;
+            }
+            input {
+                margin: 2vh auto;
+            }
+            button {
+                margin-bottom: 2vh;
+            }
+        }
+        .right{
+            width: 50%;
+            height: 100vh;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+        }
+        .i1{
+            position: absolute;
+            bottom: 5vh;
+            right: 5vh;
+            opacity: 90%;
+            width: 4%;
+        }
+        .i2{
+            position: absolute;
+            right:5vh ;
+            top: 5vh;
+            opacity: 90%;
+            width: 4%;   
+        }
+        .i3{
+            position: absolute;
+            top: 5vh;
+            left: 5vh;
+            /* opacity: 40%; */
+            width: 4%;
+        }
+        .i4{
+            position: absolute;
+            left:5vh ;
+            bottom: 5vh;
+            /* opacity: 40%; */
+            width: 4%;   
+        }
+        .i5{
+            width: 10%;
+            position: absolute;
+            top: 0;
+            left: 0vw;
+        }
+        
+        .left{
+            
+            height: 100vh;
+            width: 50%;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        h1{
+            position: absolute;
+            top: 0;
+            font-size:7vh ;
+        }
+        .visi{
+            display: flex;
+            flex-direction: row;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+        }
+        #eyeicon{
+            width: 8%;
+            height: 8%;
+            position: relative;
+            right: 12%;
+        }
+        #password{
+            position: relative;
+            left: 4%;
+        }
+    </style>
+</head>
+<body>
+    <h1>ResQ Swift</h1>
+    <div class="right">
+        <img  class="j1"  src="/css/ambulance.gif" alt="">
+
+
+    </div>
+    <div class="left">
+        <img  class="i1"  src="/css/hospital.png" alt="">
+        <img class="i2"  src="/css/heart-pulse.png" alt="">
+        <img class="i4"  src="/css/heart-pulse.png" alt="">
+    <div class="main" data-aos="fade-left">
+        
+            <form action="/hoslogin" method="post">
+                <label>Hospital Login</label>
+                <input type="email" name="hosname" placeholder="Email" required="">
+                <div class="visi">
+                    <input type="password" id="password" name="password" placeholder="Password" required="">
+                <img src="/css/eye-close.png" id="eyeicon">
+                </div>
+                <button type="submit">Login</button>
+            </form>
+         
+    </div>
+    </div>
+    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        let eyeicon = document.getElementById("eyeicon");
+  let password = document.getElementById("password");
+
+        eyeicon.onclick  = function(){
+            if(password.type == "password"){
+                password.type = "text";
+                eyeicon.src= "/css/eye-open.png"
+            }else{
+                password.type = "password"
+                eyeicon.src= "/css/eye-close.png"
+
+            }
+        }
+
+    </script>
+    <script>
+        AOS.init({
+            duration: 1000
+        });
+    </script>
+</body>
+</html>

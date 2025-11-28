@@ -1,0 +1,359 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <title>Description</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+        }
+
+        .container {
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgb(191, 228, 235);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            width: 30%;
+            
+        }
+
+        .textbox {
+            width: 70%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            font-size: 16px;
+            max-width: 100%;
+            outline: none;
+            transition: 0.3s;
+            margin-bottom: 5%;
+        }
+
+        .textbox:hover {
+            transform: scale(1.05);
+            border: 3px solid rgb(77, 110, 157);
+        }
+
+        .textbox::placeholder {
+            color: red;
+        }
+        button {
+            background: #e74c3c;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 12px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background:  #00A86B;
+            transform: scale(1.04);
+            font-weight: normal;
+
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            .textbox {
+                font-size: 14px;
+            }
+            p {
+                font-size: 140%;
+            }
+        }
+
+        p {
+            font-size: 180%;
+            font-weight: bold;
+            margin-bottom: 0;
+        }
+        a{
+            text-decoration: none;
+            transition:  0.3s ease-in;
+        }
+        a:hover {
+            transform: scale(1.2);
+            color:#00A86B;
+        }
+        .hi3:hover{
+
+            transform: scale(1.2);
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div data-aos="zoom-in" class="container">
+        <p data-aos="flip-up">Describe Emergency</p>
+        <h2>(optional)</h2>
+        <form action="/login/profile/booking/description" method="post">
+        <textarea data-aos="flip-up" class="textbox" rows="4" placeholder="Text typed here goes to Hospital" name="pdescription"></textarea>
+        <button type="submit">Submit</button>
+    </form>
+            <h5 data-aos="flip-up " class="hi3" style="font-size: 2vh;"> <a href="/login/profile/booking/description/home"> <-- Back To Home</a></h5>
+    </div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration:700
+        });
+      </script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+
+    
+    <title>Description</title>
+    <style>
+        body {
+            
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+	margin: 0;
+	padding: 0;
+    
+
+	min-height: 100vh;
+	font-family: 'Jost';
+        }
+
+        form {
+             
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            max-width: 800px;
+            min-width: 40%;
+            margin: 0 auto;
+            background-color: #2D4A90;
+            padding: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            border-radius: 20px;
+            
+            
+        }
+
+        .textbox {
+            width: 100%;
+            min-width: 60%;
+            /* min-height: 30%; */
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            font-size: 16px;
+            outline: none;
+            transition: 0.3s;
+            margin: 5%;
+            height: 50%;
+        }
+
+        .textbox:hover {
+            transform: scale(1.05);
+            border: 3px solid rgb(77, 110, 157);
+        }
+
+        .textbox::placeholder {
+            color: red;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+
+        }
+        button {
+            background:  #00A86B;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 12px 20px;
+            font-size: 17px;
+            cursor: pointer;
+            transition: background 0.3s;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background: #e74c3c;
+            /* transform: scale(1.04); */
+            /* font-weight: normal; */
+
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            .textbox {
+                font-size: 14px;
+            }
+            p {
+                font-size: 140%; /* Adjust the font size for the <p> tag */
+            }
+        }
+
+        p {
+            font-size: 150%;
+            font-weight: bold;
+            margin-bottom: 2vh;
+            padding-top: 0%;
+        }
+        a{
+            text-decoration: none;
+            transition:  0.3s ease-in;
+            padding: 0%;
+
+        }
+        a:hover {
+            color:#00A86B;
+        }
+        .hi3:hover{
+            
+            color: #fff;
+        }
+        .hi3 {
+            margin-top: 0%;
+            padding: 0%;
+
+            
+        }
+
+        a {
+            color: #ffffff;
+            transition: transform 0.5s ease;
+            border-radius: 5px;
+            font-size: 100;
+            background-color: #00A86B;
+            /* font-family: 'jost'; */
+            padding: 3% 2vh;
+        }
+
+        a:link,
+        a:visited {
+            text-decoration: none;
+        }
+
+        a:hover {
+            /* transform: scale(1.05); */
+            color: #00A86B;
+            background-color: #2D4A90;
+        }
+        form{
+            width: 80%;
+            height: 40%;
+            
+
+        }
+        .box1{
+            margin:auto 1vw ;
+        }
+        .main3{
+    width: 50%;
+
+    height: 100vh;
+
+    text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+	
+    
+    
+    transition: transform 0.3s ease;
+}     
+        .left{
+    text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        height: 100vh;
+        width: 50%;
+}    
+.right{
+            width: 50%;
+            height: 100vh;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+        }
+        .i1{
+    position: absolute;
+    left: 11vw;
+}
+h1{
+    color: #2D4A90;
+            position: absolute;
+            top: 0;
+            font-size:7vh ;
+        }
+        .j1{
+            height: 73%;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Describe Emergency</h1>
+    <div class="right">
+        <img data-aos="fade-right" class="j1"  src="/css/description.gif" alt="">
+    </div>
+
+    <div class="left">
+        <form action="/login/profile/booking/description" method="post">
+        <textarea data-aos="flip-up" class="textbox" rows="8" placeholder=" (Optional) 
+
+Text typed here goes to Hospital" name="pdescription"></textarea>
+        
+        <div class="box1">
+        <p class="hi3"> <a href="/login/profile/booking/description/home"> Home</a></p>
+
+            <button type="submit">Submit</button>
+        </div>
+
+    </form>
+    
+    </div>
+    
+
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration:1000
+        });
+      </script>
+</body>
+</html>
